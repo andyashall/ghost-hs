@@ -1,0 +1,27 @@
+.DS_Store
+dist
+dist-*
+app/app.html
+app/index.html
+cabal-dev
+*.o
+*.hi
+*.chi
+*.chs.h
+*.dyn_o
+*.dyn_hi
+.hpc
+.hsenv
+.cabal-sandbox/
+cabal.sandbox.config
+*.prof
+*.aux
+*.hp
+*.eventlog
+.stack-work/
+.stack-works/
+<<<<<<< HEAD
+cabal.project.local
+=======
+cabal.project.local
+>>>>>>> 8d97cff09a0af0be4ebebc4f7e08c89a837c3736
