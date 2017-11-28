@@ -8,6 +8,6 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Ghost_(game&#41;)
 
 - [x] check if is a word 
 - [x] check if start of word is valid
-- [ ] add scoring 
+- [x] add scoring 
 - [ ] import a list of valid words
 - [ ] ability to set the n of players
