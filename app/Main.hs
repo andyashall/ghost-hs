@@ -42,13 +42,17 @@ game (word, p1, p2, turn) = do
             putStrLn "Invalid input"
             game (word, p1, p2, turn)
 
-
 -- Could be used to also check if a word is in a list
 checkChar :: String -> Bool
 checkChar x = x `elem` ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
 checkWord :: String -> Bool
-checkWord x = x `elem` ["test","word"]
+checkWord x = x `elem` ["test", "word"]
+
+-- checkWord :: String -> Bool
+-- checkWord x = do
+--   words <- readFile "words.txt"
+--   x `elem` concat ["[", intersperse ',' words, "]"]
 
 checkStartOfWord :: String -> [Bool]
 checkStartOfWord x = map (isPrefixOf x) ["test","word"]
