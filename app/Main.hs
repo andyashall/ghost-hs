@@ -29,7 +29,9 @@ game (word, p1, p2, turn) = do
         if checkChar char
           then do
             words <- fmap lines (readFile "words.txt")
-            if (word ++ char) `elem` (map (read::String->[Char]) [(concat ["[", intersperse ',' (map (read::String->Char) words), "]"])])
+            -- putStrLn $ id (show [(concat ["[", intersperse ',' (map (read::String->Char) words), "]"])])
+            putStrLn $ id (show (map (read::String->[Char]) words))
+            if (word ++ char) `elem` [(concat ["[", intersperse ',' (map (read::String->Char) words), "]"])]
               then do
                 putStrLn $ id (show (word ++ char)) ++ " is a word"
                 if turn == 0 then game ("", (p1+1), p2, 1) else game ("", p1, (p2+1), 0)
