@@ -1,6 +1,6 @@
 module Main where
 
-import Data.List (isPrefixOf)
+import Data.List (isPrefixOf, intersperse)
 
 -- What should be passed to game? new char to be added 
 type Game = (String, Int, Int, Int)
@@ -28,7 +28,8 @@ game (word, p1, p2, turn) = do
         char <- getLine
         if checkChar char
           then do
-            if checkWord (word ++ char)
+            words <- fmap lines (readFile "words.txt")
+            if (word ++ char) `elem` [(concat ["[", intersperse ',' words, "]"])]
               then do
                 putStrLn $ id (show (word ++ char)) ++ " is a word"
                 if turn == 0 then game ("", (p1+1), p2, 1) else game ("", p1, (p2+1), 0)
@@ -49,10 +50,10 @@ checkChar x = x `elem` ["a","b","c","d","e","f","g","h","i","j","k","l","m","n",
 -- checkWord :: String -> Bool
 -- checkWord x = x `elem` ["test", "word"]
 
-checkWord :: String -> IO Bool
-checkWord x = do
-  words <- fmap lines (readFile "words.txt")
-  x `elem` words
+-- checkWord :: String -> IO Bool
+-- checkWord x = do
+--   words <- fmap lines (readFile "words.txt")
+--   x `elem` words
 
 checkStartOfWord :: String -> [Bool]
 checkStartOfWord x = map (isPrefixOf x) ["test","word"]
