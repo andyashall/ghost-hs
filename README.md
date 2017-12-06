@@ -9,5 +9,5 @@ According to [Wikipedia](https://www.wikiwand.com/en/Ghost_(game))
 - [x] check if is a word 
 - [x] check if start of word is valid
 - [x] add scoring 
-- [ ] import a list of valid words
+- [ ] import a list of valid words from text file or http
 - [ ] ability to set the n of players
