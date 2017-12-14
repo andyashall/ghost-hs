@@ -46,13 +46,13 @@ game (word, p1, p2, turn) = do
 checkChar :: String -> Bool
 checkChar x = x `elem` ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
-checkWord :: String -> Bool
-checkWord x = x `elem` ["enter", "words"]
+-- checkWord :: String -> Bool
+-- checkWord x = x `elem` ["enter", "words"]
 
--- checkWord :: String -> IO Bool
--- checkWord x = do
---   words <- fmap lines (readFile "words.txt")
---   x `elem` words
+checkWord :: String -> IO Bool
+checkWord x = do
+  words <- fmap lines (readFile "words.txt")
+  x `elem` words
 
 checkStartOfWord :: String -> [Bool]
 checkStartOfWord x = map (isPrefixOf x) ["enter", "words"]
